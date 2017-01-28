@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Sever 2 | Scheduler</title>
+		
+		
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-select.css" />
+		
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="menu-bar/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="menu-bar/css/component.css" />
+        
+		<script src="js/modernizr.custom.js"></script>
+       
+		
+	</head>
+	<body>
+    
+    
+		<div class="container">
+
+<ul id="gn-menu" class="gn-menu-main">
+				<li class="gn-trigger">
+					<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+					<nav class="gn-menu-wrapper">
+						<div class="gn-scroller">
+							<ul class="gn-menu">
+								
+								<li><a class="gn-icon" href="index.html"><i class="fa fa-clock-o"></i>Scheduler</a></li>
+								<li><a class="gn-icon" href="rescheduler.php"><i class="fa fa-pencil-square-o"></i>Edit Campaigns</a></li>
+                                <li><a class="gn-icon" href="emergency-clean-queue.php"><i class="fa fa-exclamation-triangle"></i>Log/Clear Queues</a></li>
+								
+							</ul>
+						</div><!-- /gn-scroller -->
+					</nav>
+				</li>
+				
+				
+				
+			</ul>
+
+			<div class="fs-form-wrap" id="fs-form-wrap">
+				<div class="fs-title">
+					<h1 ><img class="header-image logo" src="http://www.etargetmedia.org/wp-content/uploads/2015/01/etargetmedialogo.jpg" alt="eTargetMedia.org" title="eTargetMedia.org" >
+                    <img  src="http://etargetmedia.com/common/images/tagline.jpg" alt="eTargetMedia.org" title="eTargetMedia.org" width="380" class="logo-tagline"  >
+                    </h1>
+                    
+                   
+					
+				</div>
+                
+                <div class="server-name">
+  		<h2>Server 2 &nbsp;|&nbsp; Scheduler</h2>
+  
+  </div>
+                
+                
+                 
+				<form id="myform" class="fs-form fs-form-full" >
+					<ol class="fs-fields">
+						<li >
+                        <div class="fs-anim-upper" style="text-align:center;">
+							<p style="color:#7fd936; font-size:20px; font-weight:bold; line-height:30px;">The campaign has been scheduled sucessfully!! </p>
+                            
+           <p style="color:#EB7E7F; font-size:20px; font-weight:bold; line-height:30px;">
+           You must upload an HTML template and an email list. Please try again.</p>
+           
+           
+           <p style="color:#EB7E7F; font-size:20px; font-weight:bold; line-height:30px;">
+           There was an issue uploading. Please try again.</p>
+           
+           
+           <p style="color:#999; font-size:20px; font-weight:bold; line-height:30px;">
+           All queues are full. We can not continue.</p>
+           
+               
+              <p > <a href="scheduler.html" class="fs-startover" style="font-size:20px">Start Over</a>     </p>       
+                            
+                            
+                   </div>         
+                           
+						</li>
+                        
+                        
+                        
+						
+						
+						
+						
+						
+					</ol><!-- /fs-fields -->
+					
+				</form><!-- /fs-form -->
+			</div><!-- /fs-form-wrap -->
+
+		
+
+		</div><!-- /container -->
+        
+        <span class="copyright">&copy;2015 eTargetMedia.com, LLC All Rights Reserved.</span>
+        
+        
+        
+        
+        
+         <script src="menu-bar/js/classie.js"></script>
+		<script src="js/gnmenu.js"></script>
+        <script>
+			new gnMenu( document.getElementById( 'gn-menu' ) );
+		</script>
+		
+		<script src="js/selectFx.js"></script>
+		<script src="js/fullscreenForm.js"></script>
+		<script>
+			(function() {
+				var formWrap = document.getElementById( 'fs-form-wrap' );
+
+				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {	
+					new SelectFx( el, {
+						stickyPlaceholder: false,
+						onChange: function(val){
+							document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+						}
+					});
+				} );
+
+				new FForm( formWrap, {
+					onReview : function() {
+						classie.add( document.body, 'overview' ); // for demo purposes only
+					}
+				} );
+			})();
+		</script>
+        
+        
+        
+        <style type="text/css">
+		.fs-controls {
+			display:none;
+			}
+		
+		</style>
+	</body>
+</html>

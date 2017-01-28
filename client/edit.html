@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Server 2 | Edit Campaigns</title>
+		
+		
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-select.css" />
+		
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="menu-bar/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="menu-bar/css/component.css" />
+        
+		<script src="js/modernizr.custom.js"></script>
+       
+       
+       
+       
+       <!-- Add jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        
+        
+       
+        
+        <!-- Add fancyBox -->
+<link rel="stylesheet" href="preview-box/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+
+<script type="text/javascript" src="preview-box/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+     
+     
+     <script type="text/javascript">
+	$(document).ready(function() {
+		$(".various").fancybox({
+		maxWidth	: 800,
+		maxHeight	: 1000,
+		fitToView	: false,
+		width		: '70%',
+		height		: '95%',
+		autoSize	: false,
+		closeClick	: false,
+		openEffect	: 'none',
+		closeEffect	: 'none'
+	});
+});
+</script>
+
+
+
+     
+      <!-- Add Jquery Form -->
+        
+        <script src="js/jquery.form.js"></script> 
+        
+    
+	</head>
+	<body>
+    
+    
+		<div class="container">
+
+<ul id="gn-menu" class="gn-menu-main">
+				<li class="gn-trigger">
+					<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+					<nav class="gn-menu-wrapper">
+						<div class="gn-scroller">
+							<ul class="gn-menu">
+								
+								<li><a class="gn-icon" href="index.html"><i class="fa fa-clock-o"></i>Scheduler</a></li>
+								<li><a class="gn-icon" href="rescheduler.php"><i class="fa fa-pencil-square-o"></i>Edit Campaigns</a></li>
+                                <li><a class="gn-icon" href="emergency-clean-queue.php"><i class="fa fa-exclamation-triangle"></i>Log/Clear Queues</a></li>
+								
+							</ul>
+						</div><!-- /gn-scroller -->
+					</nav>
+				</li>
+				
+				
+				
+			</ul>
+
+			<div class="fs-form-wrap" id="fs-form-wrap">
+				<div class="fs-title">
+					<h1 ><img class="header-image logo" src="http://www.etargetmedia.org/wp-content/uploads/2015/01/etargetmedialogo.jpg" alt="eTargetMedia.org" title="eTargetMedia.org" > <img  src="http://etargetmedia.com/common/images/tagline.jpg" alt="eTargetMedia.org" title="eTargetMedia.org" width="380" class="logo-tagline"  ></h1>
+                    
+                   
+					
+				</div>
+                
+                <div class="server-name">
+  		<h2>Server 2 &nbsp;|&nbsp; Edit Campaigns</h2>
+  
+  </div>
+                
+                
+                 
+				<form id="myform" class="fs-form fs-form-full" autocomplete="off" action="scheduled-task.php" method="post" enctype="multipart/form-data">
+					<ol class="fs-fields">
+						<li>
+                        <div class="fs-anim-upper">
+							<label class="fs-field-label fs-anim-upper fs-field-label2" for="q1"  >Campaign Name</label>
+							
+                            <input class="fs-anim-lower my-fields-txt-scheduler" type="text" name="task_name" id="q1" >
+                       
+                       
+                       
+                       <label class="fs-field-label fs-anim-upper fs-field-date-time" for="q1">Date & Time</label>
+                      
+                      
+                      <div style="width:100%" >
+                       <div style="width:35%; float:left; margin-right:10%">
+                       
+                       <input type="date" name="usr_date" min="2000-01-01" max="2099-01-01" class="date-time-input" id="date-q1"></div>
+                       
+                       <div style="width:55%;float:left;">
+                       <input type="time" name="usr_time" class="date-time-input">
+                       <select name="usr_timezone" class="date-time-select"id="time-q1" >
+                <option value="Pacific/Midway" >(GMT -11:00) Midway Island, Samoa</option>
+                <option value="America/Adak" >(GMT -10:00) Hawaii</option>
+                <option value="America/Anchorage"  >(GMT -9:00) Alaska</option>
+                <option value="America/Los_Angeles"  >(GMT -8:00) Pacific Time (US &amp; Canada)</option>
+                <option value="America/Denver"  >(GMT -7:00) Mountain Time (US &amp; Canada)</option>
+                <option value="America/Chicago"  >(GMT -6:00) Central Time (US &amp; Canada), Mexico City</option>
+                <option value="America/New_York"  selected="selected">(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima</option>
+                <option value="America/Santiago"  >(GMT -4:00) Atlantic Time (Canada), La Paz, Santiago</option>
+                <option value="America/Araguaina"  >(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>
+                <option value="America/Noronha"  >(GMT -2:00) Mid-Atlantic</option>
+                <option value="Atlantic/Azores"  >(GMT -1:00 hour) Azores, Cape Verde Islands</option>
+                <option value="Europe/London"   >(GMT) Western Europe Time, London, Lisbon, Casablanca, Greenwich</option>
+                <option value="Europe/Amsterdam"   >(GMT +1:00 hour) Brussels, Copenhagen, Madrid, Paris</option>
+                <option value="Africa/Cairo"   >(GMT +2:00) Kaliningrad, South Africa, Cairo</option>
+                <option value="Europe/Moscow"   >(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>
+                <option value="Asia/Dubai"   >(GMT +4:00) Abu Dhabi, Muscat, Yerevan, Baku, Tbilisi</option>
+                <option value="Asia/Yekaterinburg"   >(GMT +6:00) Almaty, Dhaka, Colombo</option>
+                <option value="Asia/Dhaka"   >(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent</option>
+                <option value="Asia/Krasnoyarsk"   >(GMT +7:00) Bangkok, Hanoi, Jakarta</option>
+                <option value="Asia/Hong_Kong"   >(GMT +8:00) Beijing, Perth, Singapore, Hong Kong</option>
+                <option value="Asia/Tokyo"   >(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk</option>
+                <option value="Asia/Vladivostok"  >(GMT +10:00) Eastern Australia, Guam, Vladivostok</option>
+                <option value="Pacific/Norfolk"  >(GMT +11:00) Magadan, Solomon Islands, New Caledonia</option>
+                <option value="Pacific/Auckland"  >(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka</option>
+        </select>
+                       </div>
+                       
+                          </div>  
+                          
+                     <div style="clear:both;"></div>     
+                                            
+                   </div>         
+                           
+						</li>
+                        
+                        <li>
+                        <div class="fs-anim-upper">
+							<label class="fs-field-label fs-anim-upper" for="q2">Choose Creative</label>
+							
+                            <input class="fs-anim-lower my-fields-txt" name="userfile[]" type="file"  id="q2" required>
+                            
+                            
+                            
+                           </div> 
+                           
+						</li>
+                        
+						<li>
+							
+                            <div class="fs-anim-upper">
+                            <label class="fs-field-label fs-anim-upper" for="q3">Choose Seed List</label>
+							
+                            <input class="fs-anim-lower my-fields-txt" name="userfile[]" type="file"  id="list-q3" >
+                            
+                            <br/>
+                           
+                       
+                        
+                        
+                        <input class="fs-anim-upper internal-list-box" type="checkbox" name="internal_list" value="true" checked > 
+                        
+                        
+                            <label class="fs-field-label fs-anim-upper internal-list-label" for="q3" >Add internal list?</label>
+                            
+                            
+                            <div style="clear:both;"></div>  
+                            
+                            <label class="fs-field-label fs-anim-upper textarea-comment" for="q3" >Additionally you may specify email addresses to be used in this text box.</label>
+                            
+                            
+                            
+                           
+						
+                        
+                        </div>
+                        </li>
+						
+						
+						
+						
+					</ol><!-- /fs-fields -->
+                    
+                    <button class="various fs-review" data-fancybox-type="iframe" type="submit" formaction="preview.php" id="review-button">Review Creative</button>
+                    
+                   
+                    
+					<input class="fs-submit" type="submit" value="Send Test">
+				</form><!-- /fs-form -->
+			</div><!-- /fs-form-wrap -->
+
+		
+
+		</div><!-- /container -->
+        
+        
+        <span class="copyright">&copy;2015 eTargetMedia.com, LLC All Rights Reserved.</span>
+        
+         <script src="menu-bar/js/classie.js"></script>
+		<script src="js/gnmenu.js"></script>
+        <script>
+			new gnMenu( document.getElementById( 'gn-menu' ) );
+		</script>
+		
+		<script src="js/selectFx.js"></script>
+		<script src="js/fullscreenForm.js"></script>
+		<script>
+			(function() {
+				var formWrap = document.getElementById( 'fs-form-wrap' );
+
+				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {	
+					new SelectFx( el, {
+						stickyPlaceholder: false,
+						onChange: function(val){
+							document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+						}
+					});
+				} );
+
+				new FForm( formWrap, {
+					onReview : function() {
+						classie.add( document.body, 'overview' );
+						classie.add( document.body.closest("html"), 'my-overview-height' ); // for demo purposes only
+					}
+				} );
+			})();
+		</script>
+        
+       
+
+
+
+        <script type="text/javascript">
+		
+  $(function(){
+		      $("html").height(function() {
+		            if($(this).height() < 755) {
+		                 $($(this)).addClass("my-height");
+							
+						}
+							});		
+					});	
+
+</script>
+
+
+
+
+
+<!--<script> 
+        
+        $(document).ready(function() { 
+             
+            $('#myform').ajaxForm(function() { 
+              
+			   success: function(responseText){
+            $($(this)).fancybox({
+                'content' : responseText
+           });
+			   
+		}
+			    
+            }); 
+        }); 
+    </script> -->
+    
+    
+  <!--<script>
+$(document).ready(function() {
+    $(".various").click(function() {
+        $.post('preview.php', $(this).parent().serialize())
+            .done(function() {
+                $.fancybox.open({
+                    href : 'preview.php',
+                    type : 'iframe',
+                    padding : 5
+                });
+            });
+    });
+});
+</script>-->
+  
+  
+   
+          
+	</body>
+</html>

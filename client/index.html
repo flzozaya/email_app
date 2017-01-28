@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" ng-app='app'>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Server 2 | Scheduler</title>
+	
+	<link rel="stylesheet/less" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet/less" type="text/css" href="css/demo.less" />
+	<link rel="stylesheet/less" type="text/css" href="css/component.less" />
+	<link rel="stylesheet/less" type="text/css" href="css/cs-select.less" />
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet/less" type="text/css" href="css/menu-bar/css/demo.less" />
+	<link rel="stylesheet/less" type="text/css" href="css/menu-bar/css/component.less" />
+    
+	<script src="js/modernizr.custom.js"></script>
+  	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
+   
+<!-- Add jQuery / Angular libraries -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js"></script>
+    
+    <script src="app/app.js"></script>
+<!-- Add fancyBox -->
+	<!-- <link rel="stylesheet" href="preview-box/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" /> -->
+	<!-- <script type="text/javascript" src="preview-box/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript">
+		$(document).ready(function() {
+			$(".various").fancybox({
+			maxWidth	: 800,
+			maxHeight	: 1000,
+			fitToView	: false,
+			width		: '70%',
+			height		: '95%',
+			autoSize	: false,
+			closeClick	: false,
+			openEffect	: 'none',
+			closeEffect	: 'none'
+			});
+		});
+	</script> -->
+  	
+<!-- Add Jquery Form -->
+    <script src="js/jquery.form.js"></script> 
+
+    <style type="text/css">
+    	input.my-fields-txt-scheduler::-webkit-input-placeholder { 
+			color: #fff;
+			opacity: 0.45;
+		}		
+    </style>
+</head>
+<body>
+	<div class="container">
+		<ul id="gn-menu" class="gn-menu-main">
+			<li class="gn-trigger">
+				<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+				<nav class="gn-menu-wrapper">
+					<div class="gn-scroller">
+						<ul class="gn-menu">
+							<li><a class="gn-icon" href="#/"><i class="fa fa-clock-o"></i>Deployment</a></li>
+							<li><a class="gn-icon" href="#/list"><i class="fa fa-list-ul"></i>Campaign List</a></li>
+                            <li><a class="gn-icon" href="emergency-clean-queue.php"><i class="fa fa-exclamation-triangle"></i>Log/Clear Queues</a>
+                            </li>
+						</ul>
+					</div><!-- /gn-scroller -->
+				</nav>
+			</li>
+		</ul>
+		<div class="server-name">
+				<h2>eMail App</h2>
+		</div>
+<!-- /* ================ Partial Start ======================== */ -->
+
+
+		<div ng-view="" class="angular-ng-view"></div>
+		
+
+
+<!-- /* ================ Partial End ======================== */ -->
+
+
+	</div><!-- /container -->
+    <script src="css/menu-bar/js/classie.js"></script>
+	<script src="js/gnmenu.js"></script>
+	<script>
+		new gnMenu( document.getElementById( 'gn-menu' ) );
+	</script>
+	
+	<script src="css/menu-bar/js/custom-animation.js"></script>
+	
+</body>
+</html>
