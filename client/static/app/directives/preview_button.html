@@ -1,0 +1,28 @@
+<div class="modal fade preview-modal-{{$ctrl.modalId}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+	  <div class="modal-dialog modal-lg" role="document">
+	    <div class="modal-content">
+	      <div class="modal-body">
+	      		<div class="modal-header">
+		      		<h4 class="modal-title">
+			      		<p class="eblast-headers"><strong>From: </strong>{{ $ctrl.from }}</p>
+			      		<p class="eblast-headers"><strong>Subject: </strong>{{ $ctrl.subject }}</p>
+		      		</h4>
+		      	</div>
+	 			<iframe ng-src="{{ $ctrl.iframeUrl }}" width="100%" style="background-color: #fff; border:0;" height="600" >
+	 			</iframe>
+
+	 			<hr>
+
+	 			<div ng-transclude></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+
+
+<button data-toggle="modal" data-target=".preview-modal-{{$ctrl.modalId}}" type="submit" id="review-button">{{ $ctrl.label }}</button>
+
+
+
+

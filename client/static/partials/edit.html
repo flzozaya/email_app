@@ -1,11 +1,10 @@
 <div class="fs-form-wrap" id="fs-form-wrap">
-
 	<form id="myform" class="fs-form fs-form-full" autocomplete="off">
 
 		<ol class="fs-fields">
 			<li>
                 <div class="fs-anim-upper">
-					<h3>Setup Schedule</h3>
+					<h3>Edit Campaign</h3>
 					<label class="fs-field-label fs-anim-upper fs-field-label2" for="q1"  >Campaign Name</label>
                     <input class="fs-anim-lower my-fields-txt-scheduler" type="text" name="name" ng-model="newCampaign.name" id="q1" required>
            			
@@ -48,15 +47,14 @@
 	        				</select>
                        	</div>
 	                </div>  
-             		<div style="clear:both;"></div>     
-           		</div>         
-                   
-			</li>
-                
-            <li>
-                <div class="fs-anim-upper">
-					<h3>Assets</h3>
-					<div style="width:100%" >
+             		<div style="clear:both;"></div> 
+
+
+  				<hr/>
+
+
+
+             		<div style="width:100%" >
                     	<div style="width:35%; float:left; margin-right:10%">
            					<label class="fs-field-label fs-anim-upper fs-field-label2" for="q1">From</label>
                        		<input type="text" placeholder="Enter From Name:" name="from_line" ng-model="newCampaign.from_line" min="2000-01-01" max="2099-01-01" class="date-timeput my-fields-txt-scheduler" id="date-q1" required>
@@ -81,26 +79,12 @@
   					</div>     
   					{{HtmlerrorMsg}}
 
-  					<textarea ui-codemirror ui-codemirror-opts="editorOptions" ng-model="newCampaign.html_artwork_upld" class="custom-codemirror-box"></textarea>
+  					<textarea ui-codemirror ui-codemirror-opts="editorOptions" ng-model="newCampaign.html_artwork_upld" class="custom-codemirror-box"></textarea> 
 
-  					<!-- <div ui-codemirror ui-codemirror-opts="editorOptions" ng-model="newCampaign.htmlfile" class="custom-codemirror-box"></div> -->
 
-  					<!-- <ui-codemirror ui-codemirror-opts="editorOptions" ng-model="newCampaign.htmlfile" class="custom-codemirror-box"></ui-codemirror> -->
+  				<hr/>
 
-                    <!-- <input class="fs-anim-lower my-fields-txt" name="htmlfile" type="file" file-model="newCampaign.htmlfile" id="q2" required> -->
-                    
-                    <!-- <button class="" data-toggle="modal" data-target=".preview-modal" type="submit" ng-click="reviewCampaign()" id="review-button">Review Creative</button> -->
-                    
-                    <!-- <preview-campaign-modal html="newCampaign.htmlfile" from="newCampaign.from" subject="newCampaign.subject" modal-id="assets"></preview-campaign-modal> -->
-
-                </div> 
-			</li>
-                
-			<li>
-                <div class="fs-anim-upper">
-					<h3>Sending To?</h3>
-
-                    <label class="fs-field-label fs-anim-upper" for="q3">Choose Mailing List</label>
+  					<label class="fs-field-label fs-anim-upper" for="q3">Choose Mailing List</label>
                     <input class="fs-anim-lower my-fields-txt" name="mailing_list" type="file"  id="list-q3" ngf-select="uploadList($file, $invalidFiles)" accept="text/*">
                     <div style="font:smaller">
                     <!-- {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}} -->
@@ -112,20 +96,33 @@
                     
                     <div style="clear:both;"></div>  
                     
-                    <textarea class="fs-anim-lower textarea-box" cols="30" rows="25"  name="mailing_list" for="q3" ng-model="newCampaign.mailing_list"></textarea>
-                </div>
-            </li>
+                    <textarea class="fs-anim-lower textarea-box" cols="30" rows="25"  name="mailing_list" for="q3" ng-model="newCampaign.mailing_list"></textarea>   
+
+
+                <hr/>
+
+	                <preview-campaign-modal class="fs-review" html="newCampaign.html_artwork_upld" from="newCampaign.from_line" subject="newCampaign.subject_line" modal-id="overview" label="Review">
+	        		</preview-campaign-modal>
+
+
+					<input class="fs-submit" type="submit" value="Save" ng-click="sendCampaign()">
+
+                    <div style="clear:both;"></div>  
+
+           		</div>         
+                   
+			</li>
 		</ol><!-- /fs-fields -->
             
-        <!-- <button class="fs-review" data-toggle="modal" data-target=".preview-modal" type="submit" ng-click="reviewCampaign()" id="review-button">Review Creative</button> -->
-        
-        <preview-campaign-modal class="fs-review" html="newCampaign.html_artwork_upld" from="newCampaign.from_line" subject="newCampaign.subject_line" modal-id="overview" label="Review Creative">
-        </preview-campaign-modal>
-
-
-		<input class="fs-submit" type="submit" value="Deploy" ng-click="sendCampaign()">
 	</form><!-- /fs-form -->
 </div><!-- /fs-form-wrap -->
+
+<style type="text/css">
+    .fs-controls {
+        display:none;
+      }
+</style>
+
 <script src="js/selectFx.js"></script>
 <script src="js/fullscreenForm.js"></script>
 <script>
@@ -145,9 +142,14 @@
 				classie.add( document.body.closest("html"), 'my-overview-height' ); // for demo purposes only
 			}
 		});
+
 	});
 </script>
-	
+
 <script>
-    $('body').removeClass('edit-campaign');
-</script> 
+	
+	$('body').addClass('edit-campaign');
+</script>
+
+
+	

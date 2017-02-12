@@ -1,6 +1,9 @@
 /**
  * Created by peachteaboba on 2/14/16.
  */
+console.log('mongoose');
+
+
 
 // Require mongoose
 var mongoose = require('mongoose');

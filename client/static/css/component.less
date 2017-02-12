@@ -111,6 +111,10 @@
 	   border-top: 4px solid @primary;
 }
 
+div.fs-anim-upper p, div.fs-anim-upper a {
+	text-align: center;
+}
+
 .fs-form-overview div.fs-anim-upper {
 	background-color: none !important;
 }
@@ -249,8 +253,7 @@ button.fs-continue,
 .js .fs-form-full .fs-fields > li {
 	position: absolute;
 	width: 100%;
-	/*background-color: #fafafa;
-    padding: 20px;*/
+	margin-bottom: 160px;
 }
 
 .fs-form-overview .fs-fields > li,
@@ -261,6 +264,7 @@ button.fs-continue,
 }
 
 /* Labels & info */
+
 .fs-fields > li label {
 	position: relative;
 }
@@ -269,6 +273,7 @@ button.fs-continue,
 	display: inline-block;
 	padding: 0 5px 9px 0;
 	pointer-events: none;
+	font-weight: normal;
 }
 
 .fs-fields > li label.fs-field-label2 {
@@ -321,11 +326,12 @@ label.textarea-comment	{
 	
 	
 textarea.textarea-box {
-	color:#aaa; 
-	font-size:0.4em; 
-	width:70%; 
-	height:130px; 
+	/*color:#aaa; */
+	font-size:0.45em; 
+	width:100%; 
+	height:160px; 
 	font-weight:normal;
+	margin-top: 15px;
 	
 }
 
@@ -406,19 +412,20 @@ textarea.textarea-box {
 }
 
 .fs-form-overview .fs-fields .textarea-box {
-	 font-size: 0.8em;
+	 font-size: 0.65em;
     font-weight: normal;
 	
 	}
 
 .fs-form-overview .fs-fields input#q1, .fs-form-overview .fs-fields .textarea-box {
-	background-color: @primary  !important; /* Fixes chrome bug with placeholder */
+	background-color: fade(@primary, 80%) !important; /* Fixes chrome bug with placeholder */
 	border-radius: 3px;
+	padding: 0.6em;
 }
 
 .fs-form-overview .fs-fields input#q1:focus, .fs-form-overview .fs-fields .textarea-box:focus {
-	color: #777  !important;
-	background-color: @primary !important;
+	color: #444  !important;
+	background-color: @primary !important
 }
 
 .fs-fields [required] {
@@ -550,21 +557,20 @@ textarea.textarea-box {
 }
 
 .fs-fields textarea {
-	padding: 0.25em;
-	/*width: 100%;
-	height: 200px;*/
-	border: 2px solid rgba(0,0,0,0.2);
-	background-color: transparent;
-	/*color: #fffed8;
-	font-weight: 700;
-	font-size: 0.85em;*/
-	/*resize: none;*/
+	padding: 0.6em;
+	color: #444;
+	border: none;
+	border-radius: 3px;
+	background-color: fade(@primary, 70%);
+	
 }
 
 .fs-form-overview .fs-fields textarea {
 	height: 140px;
-	color: rgba(0,0,0,0.63);
-	width:539px;
+	/*color: rgba(0,0,0,0.63);*/
+	padding: 0.6em;
+	font-size: 0.65em;
+	background-color: fade(@primary, 85%)
 }
 
 .fs-fields textarea:focus {
@@ -614,22 +620,26 @@ textarea.textarea-box {
 /* placeholder */
 .fs-fields input::-webkit-input-placeholder,
 .fs-fields textarea::-webkit-input-placeholder {
-	color: rgba(0,0,0,0.1);
+	color: fade(@primary, 45%);
+	text-align: center;
 }
 
 .fs-fields input:-moz-placeholder,
 .fs-fields textarea:-moz-placeholder {
-	color: rgba(0,0,0,0.1);
+	color: fade(@primary, 45%);
+	text-align: center;
 }
 
 .fs-fields input::-moz-placeholder,
 .fs-fields textarea::-moz-placeholder {
-	color: rgba(0,0,0,0.1);
+	color: fade(@primary, 45%);
+	text-align: center;
 }
 
 .fs-fields input:-ms-input-placeholder,
 .fs-fields textarea:-ms-input-placeholder {
-	color: rgba(0,0,0,0.1);
+	color: fade(@primary, 45%);
+	text-align: center;
 }
 
 /* Hide placeholder when focused in Webkit browsers */
@@ -637,9 +647,48 @@ textarea.textarea-box {
 	color: transparent;
 }
 
+.dropdown-menu {
+	background-color: fade(@primary, 95%);
+
+
+	th.ng-scope small {
+		color: fade(@secondary, 60%); 
+		/*font-weight: normal;*/
+	}
+
+	button.btn-default  {
+		
+		span, strong, i{
+			color: @third;
+		}
+
+	
+
+
+	}
+
+}
+
+.form-control {
+	-webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.am-pm .btn-default {
+	color: @primary;
+	margin-top: -5px;
+
+	&:hover, &:active, &:focus {
+		background-color: fade(@btn_sxs, 45%);
+		color: @primary;
+		-webkit-box-shadow: none !important;
+    	box-shadow: none !important;
+	}
+}
+
 /* Dot navigation */
 .fs-nav-dots {
-	position: absolute;
+	position: fixed;
 	top: 45%;
 	right: 60px;
 	left: auto;
@@ -694,7 +743,7 @@ textarea.textarea-box {
 
 /* Progress bar */
 .fs-progress {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	width: 0%;
 	height: 0.3em;
@@ -705,7 +754,7 @@ textarea.textarea-box {
 
 /* Number indicator */
 .fs-numbers {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	right: 0;
 	overflow: hidden;
@@ -889,12 +938,7 @@ textarea.textarea-box {
 
 
 
-.rescheduler .fs-startover {
-	float:left;
-	margin-bottom:40px;
-	margin-left:100px;
-	
-}
+
 
 .rescheduler .fs-delete {
 	float:right;
@@ -925,11 +969,12 @@ textarea.textarea-box {
 
 /* Review button */
 
-.fs-review, .fs-startover {
+.fs-review {
 	padding: 0.5em 1.2em;
 	border-radius: 40px;
 	font-size:0.85em;
 }
+
 /* Continue button and submit button */
 .fs-submit {
 	padding: 0.5em 1.2em;
@@ -973,7 +1018,7 @@ button.fs-continue {
 
 button.fs-continue {
 	
-	position: absolute;
+	position: fixed;
 	right: 0;
 	bottom: 0;
 	margin: 0 6.5% 60px 0;
@@ -995,11 +1040,7 @@ button.fs-continue:hover {
 }
 
 
-.fs-review:hover,
-.fs-review:focus, .fs-startover:hover, .fs-startover:focus {
-	background: #FC6;
-	color: #fff;
-}
+
 
 
 .fs-continue::after {
@@ -1011,7 +1052,7 @@ button.fs-continue:hover {
 	text-align: center;
 	background: transparent;
 	color: rgba(0,0,0,0.3);
-	content: 'or press ENTER';
+	/*content: 'or press ENTER';*/
 	font-size: 0.65em;
 	pointer-events: none;
 }
@@ -1020,10 +1061,10 @@ button.fs-continue:hover {
 .fs-message-error {
 	position: absolute;
 	bottom: 76%;
-	left: 49.99%;
+	left: 49.99999%;
 	z-index: 800;
 	max-width: 960px;
-	width: 50.9%;
+	width: 51%;
 	color: @secondary;
 	background-color: @primary;
 	padding:6px 12px 7px 12px;
@@ -1291,13 +1332,13 @@ html.my-overview-height .copyright {
 
 /* //////////// IDLE BUTTON ////////////*/
 	
-.fs-form-overview .fs-review, .fs-startover {
+.fs-form-overview .fs-review {
 	border: 2px solid @primary !important;
 	color: @primary;
 }
 
 .fs-review:hover,
-.fs-review:focus, .fs-startover:hover, .fs-startover:focus {
+.fs-review:focus {
 	background: @primary;
 	color: @secondary;
 	border-color: @primary !important;
@@ -1326,57 +1367,201 @@ html.my-overview-height .copyright {
 .logo-tagline {
 	width:440px;
 }
-table.camp-list {
 
-	th {
-		font-size: 0.7em;
-		font-weight: normal;
-		padding: 15px 0;
-		background-color: @primary;
-		color: @secondary;
-		border-radius: 2px 2px 0 0;
-	}
-	td {
-		font-size: 0.5em;
-		padding: 15px 0;
-		border-top: 1px solid @primary;
-	}
-	/*td:after {
-		content: '|';
-	}
-	*/
-	td:last-child:after {
-		content: '';
-	}
+div.confirmation-container {
+	width: 290px;
+	margin: 0 auto;
+}
+a.fs-startover {
+	padding: 0.465em 1.2em;
+	font-size:  0.57em !important;
+	border-radius: 20px;
+	margin-right: 8px;
+	text-align: right;
+	background-color: @btn_sxs2;
+	color: @primary;
+	float:left;
+	border: 2px solid @btn_sxs2;
 
-	button {
-		padding: 5px 12px;
-		border-radius: 20px;
-		margin-right: 8px;
-		text-align: right;
+	&:hover {
+		text-decoration:none;
 	}
-
-	button.delete-btn {
-		background-color: @secondary;
-		border: 1px solid @btn_sxs2;
-		color: @primary;
-	}
-
-	button.edit-btn {
-		background-color: @btn_sxs2;
-		/*border: 1px solid @btn_sxs2;*/
-		color: @primary;
-	}
-
-	button.view-btn {
-		background-color: @primary;
-		/*border: 1px solid @primary;*/
-		color: @secondary;
-	}
-
 }
 
 
+table.camp-list {
+
+	text-align: center;
+
+		tr:nth-child(odd) {
+			background-color: fade(@btn_sxs2, 15%);
+		}
+
+		tr:first-child {
+			background-color: @primary;
+			color: @secondary;
+		}
+ 		th {
+			font-size: 0.7em;
+			font-weight: normal;
+			padding: 15px 0;
+			text-align: center;
+
+				&:first-child {
+					border-radius: 4px 0 0 0;
+				}
+				&:last-child {
+					width: 210px;
+					border-radius: 0 4px 0 0;
+
+				}
+		}
+		
+
+		td {
+			font-size: 0.5em;
+			padding: 15px 0;
+			border-top: 1px solid @primary;
+			text-align: center;
+
+		}
+
+		button {
+			padding: 5px 12px;
+			border-radius: 20px;
+			margin-right: 8px;
+			text-align: right;
+		}
+
+		button:hover {
+			top: 1px;
+			position: relative;
+		}
+
+		button.delete-btn {
+			background-color: @secondary;
+			border: 1px solid @btn_sxs2;
+			color: @primary;
+		}
+
+		button.edit-btn {
+			background-color: @btn_sxs2;
+			/*border: 1px solid @btn_sxs2;*/
+			color: @primary;
+		}
+
+		.view-btn button {
+			background-color: @primary;
+			/*border: 1px solid @primary;*/
+			color: @secondary;
+		}
+
+}
+
+.CodeMirror{
+	font-size: 13px !important; 
+	width: 100%; 
+	background-color: fade(@primary, 80%) !important; 
+	color: #444 !important;
+	min-height: 400px;
+	margin-top: 10px; 
+	border: none;
+	border-radius: 3px;
+	font-family: 'Raleway', Arial, sans-serif !important;
+}
+
+.modal-header {
+
+	padding: 4px 15px !important;
+
+		.eblast-headers {
+			color: #666 !important;
+			font-family: 'Raleway', Arial, sans-serif !important;
+			font-size: 14px !important; 
+			text-align: left !important;
+		}
+}
+
+.modal-backdrop {
+	z-index: 0 !important;
+}
+/*  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::  */
+
+.thumb {
+    width: 24px;
+    height: 24px;
+    float: none;
+    position: relative;
+    top: 7px;
+}
+
+form .progress {
+    line-height: 15px;
+}
+
+.progress {
+    /*display: inline-block;*/
+    width: 100%;
+    
+}
+
+.progress div {
+    font-size: 12px !important;
+    background: fade(@primary, 45%);
+    width: 0;
+    color: @secondary;
+    margin-top: 5px;
+    border-radius: 2px;
+    padding: 1px 8px;
+    text-align: center;
+}
+
+/*  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::  */
+
+.edit-campaign {
+
+	.fs-fields input {
+		border-bottom: none;
+		background-color: fade(@primary, 25%);
+		color: @primary;
+		border-radius: 3px;
+
+		&:focus {
+			background-color: @primary;
+			color: @third;
+		}
+	}
+
+	.fs-fields li label {
+
+		font-size: 0.7em;
+	}
+
+	.fs-review {
+		display: block;
+		border: 2px solid @primary !important;
+    	color: @primary;
+    	float: left;
+    	padding: 0.45em 1.2em 0.35em;
+	    font-size: 0.55em;
+
+	    &:hover {
+    		color: @secondary;
+			border-color: @secondary;
+
+
+	    }
+	}
+
+	.fs-submit {
+		display: block;
+		float: right;
+		width: auto;
+		border-radius: 40px !important;
+		padding: 0.68em 1.3em;
+	    /*font-size: 0.65em;*/
+
+	}
 
 
 
@@ -1387,15 +1572,7 @@ table.camp-list {
 
 
 
-
-
-
-
-
-
-
-
-
+}
 
 
 

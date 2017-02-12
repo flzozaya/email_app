@@ -6,6 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<title>Server 2 | Scheduler</title>
 	
+	<link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../node_modules/angular-ui-bootstrap-datetimepicker/datetimepicker.css">
+   
+
 	<link rel="stylesheet/less" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet/less" type="text/css" href="css/demo.less" />
 	<link rel="stylesheet/less" type="text/css" href="css/component.less" />
@@ -15,18 +19,52 @@
 	<link rel="stylesheet/less" type="text/css" href="css/menu-bar/css/demo.less" />
 	<link rel="stylesheet/less" type="text/css" href="css/menu-bar/css/component.less" />
     
+<!-- Code Mirror CSS -->
+	<link rel="stylesheet" type="text/css" href="../node_modules/codemirror/lib/codemirror.css"></link>
+
 	<script src="js/modernizr.custom.js"></script>
+
+<!-- Include Les.js -->
   	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
    
-<!-- Add jQuery / Angular libraries -->
+<!-- Add jQuery, Bootstrap & Angular libraries -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     
+
+<!-- Date Time Picker / Angular UI-Bootstrap -->
+    <script src="../node_modules/angular-ui-bootstrap-datetimepicker/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <script src="../node_modules/angular-ui-bootstrap-datetimepicker/datetimepicker.js"></script>
+
+<!-- Add ng-file-upload Dependencies -->
+    <script src="../node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js"></script>
+    <script src="../node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>
+    
+
+<!-- Code Mirror JS -->
+	<script type="text/javascript" src="../node_modules/codemirror/lib/codemirror.js"></script>
+	<script type="text/javascript" src="../node_modules/codemirror/mode/xml/xml.js"></script>
+
+	<script type="text/javascript" src="js/lib/ui-codemirror.js"></script>
+	<!-- <script type="text/javascript" src="js/lib/placeholder.js"></script> -->
+
+
+
+<!-- Add App Dependencies, Controllers & Factories  -->
     <script src="app/app.js"></script>
+    <script src="app/factories.js"></script>
+    <script src="app/controllers.js"></script>
+    <script src="app/directives/preview_button.js"></script>
+
+
+
+
 <!-- Add fancyBox -->
-	<!-- <link rel="stylesheet" href="preview-box/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" /> -->
-	<!-- <script type="text/javascript" src="preview-box/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+	<!-- <link rel="stylesheet" href="preview-box/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+	<script type="text/javascript" src="preview-box/source/jquery.fancybox.pack.js?v=2.1.5"></script>
     <script type="text/javascript">
 		$(document).ready(function() {
 			$(".various").fancybox({
@@ -54,7 +92,7 @@
     </style>
 </head>
 <body>
-	<div class="container">
+	<div class="my-container">
 		<ul id="gn-menu" class="gn-menu-main">
 			<li class="gn-trigger">
 				<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
@@ -63,7 +101,7 @@
 						<ul class="gn-menu">
 							<li><a class="gn-icon" href="#/"><i class="fa fa-clock-o"></i>Deployment</a></li>
 							<li><a class="gn-icon" href="#/list"><i class="fa fa-list-ul"></i>Campaign List</a></li>
-                            <li><a class="gn-icon" href="emergency-clean-queue.php"><i class="fa fa-exclamation-triangle"></i>Log/Clear Queues</a>
+                            <!-- <li><a class="gn-icon" href="#/wall"><i class="fa fa-exclamation-triangle"></i>Wall</a> -->
                             </li>
 						</ul>
 					</div><!-- /gn-scroller -->

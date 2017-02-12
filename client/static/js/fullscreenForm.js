@@ -210,7 +210,7 @@
 		} );
 
 		// keyboard navigation events - jump to next field when pressing enter
-		document.addEventListener( 'keydown', function( ev ) {
+		/*document.addEventListener( 'keydown', function( ev ) {
 			if( !self.isLastStep && ev.target.tagName.toLowerCase() !== 'textarea' ) {
 				var keyCode = ev.keyCode || ev.which;
 				if( keyCode === 13 ) {
@@ -218,7 +218,7 @@
 					self._nextField();
 				}
 			}
-		} );
+		} );*/
 	};
 
 	/**

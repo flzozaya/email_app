@@ -2,6 +2,9 @@
  * Created by peachteaboba on 1/22/17.
  */
 
+console.log('server.js');
+
+
 // =========================================================================
 // ============================== Require ==================================
 // =========================================================================
@@ -16,9 +19,12 @@ require('colors');
 // =========================================================================
 var app = express();
 app.use(bodyParser.json());
+app.use(bodyParser.text({ type: 'text/html' }));
+app.use(express.static(path.join(__dirname, '/')));
 app.use(express.static(path.join(__dirname, '/client')));
 app.use(express.static(path.join(__dirname, '/client/static')));
-
+// var multer = require('multer');
+// app.use(multer({ dest: './uploads/' }).single('htmlfile'));
 // =========================================================================
 // ============================= Database ==================================
 // =========================================================================
@@ -35,5 +41,5 @@ require('./server/config/routes.js')(app);
 // =============================== Listen ==================================
 // =========================================================================
 app.listen(9000, function() {
-    console.log("It's over 9000!!!".blue);
+    console.log("Connected to port 9000!!!".blue);
 });

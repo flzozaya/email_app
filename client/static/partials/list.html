@@ -1,23 +1,31 @@
-<div class="fs-form-wrap" id="fs-form-wrap">
+<div class="fs-form-wrap" id="fs-form-wrap" ng-controller="campaign_list">
     <form id="myform" class="fs-form fs-form-full rescheduler">
         <ol class="fs-fields">
             <li>
-                <div class="fs-anim-upper" style="text-align:center;">
+                <div class="fs-anim-upper">
+                    <h3>Campaign List</h3>
                     <table width="100%" cellpadding="0" cellspacing="0" border="0" class="camp-list">
                         <tr>
                             <th>Campaign Name</th>
                             <th>Scheduled Time</th>
                             <th>Actions</th>
                         </tr>
-                        <tr>
-                            <td>Sample Campaign Name</td>
-                            <td>DD/MM/YYYY <strong>at</strong> HH:MM</td>
+                        <tr ng-repeat="camp in campaigns">
+                            <td>{{ camp.name }}</td>
+                            <td>{{ camp.dep_date_time | date: 'MMM dd, yyyy ' }} <strong>at:</strong> {{ camp.dep_date_time | date: 'h:mm a' }}</td>
                             <td>
-                                <button class="delete-btn">Delete</button>
-                                <button class="edit-btn">Edit</button>
-                                <button class="view-btn">View</button>
+                                <button class="delete-btn" ng-click="delete(camp._id)">Delete</button>
+                                <button class="edit-btn"><a href="#/edit/{{ camp._id }}">Edit</a></button>
+
+                                <preview-campaign-modal class="view-btn" html="camp.html_artwork_upld" from="camp.from_line" subject="camp.subject_line" modal-id="{{ camp._id }}" label="View">
+                                   
+                                    <textarea class="fs-anim-lower textarea-box" cols="30" rows="25"  name="seedlist" for="q3" ng-model="camp.mailing_list"></textarea>
+
+                                </preview-campaign-modal>
                             </td>
                         </tr>
+
+                        
 
                     </table>
                 </div>         
@@ -51,9 +59,12 @@
         classie.add( document.body.closest("html"), 'my-overview-height' ); // for demo purposes only
       }
     });
-    $('html').removeClass('my-overview-height');
-    $('body').removeClass('overview');
+    
   });
 </script>     
    
+<script>
+    $('html').removeClass('my-overview-height');
+    $('body').removeClass('overview');
+</script>   
 		
