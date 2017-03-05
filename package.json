@@ -1,6 +1,6 @@
 {
   "name": "email_Deployment_App",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Full MEAN email Deployment App",
   "main": "server.js",
   "author": "Lorenzo Zozaya - zozaya.io",
