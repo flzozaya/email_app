@@ -9,15 +9,16 @@ var mongoose = require('mongoose');
 
 // Require the model and save it in a variable
 var Campaign = mongoose.model('Campaign');
+var env = require('.env.js');
 
 const nodemailer = require('nodemailer');
 
 // create reusable transporter object using the default SMTP transport
 let transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: env.SMTP_SERVICE,
     auth: {
-        user: 'flzozaya@gmail.com',
-        pass: 'Lorenzo207'
+        user: env.SMPT_LOGIN,
+        pass: env.SMPT_PAS
     }
 });
 
@@ -28,7 +29,7 @@ module.exports =  {
 
             // setup email data with unicode symbols
             let mailOptions = {
-                from: req.body.from_line + ' <flzozaya@gmail.com>', // sender address
+                from: req.body.from_line, // sender address
                 to: req.body.mailing_list, // list of receivers
                 subject: req.body.subject_line, // Subject line
                 html: req.body.html_artwork_upld // html body
@@ -47,7 +48,7 @@ module.exports =  {
                                         name: req.body.name, 
                                         dep_date_time: req.body.dep_date_time,
                                         timezone: req.body.timezone,
-                                        html_artwork_upld: req.body.html_artwork_upld,  //htmlHandler(req.file.filename),
+                                        html_artwork_upld: req.body.html_artwork_upld,  
                                         from_line: req.body.from_line,
                                         subject_line: req.body.subject_line,
                                         mailing_list: req.body.mailing_list

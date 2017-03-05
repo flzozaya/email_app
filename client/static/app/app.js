@@ -9,6 +9,9 @@ app.config(function($routeProvider){
 	.when('/confirmation', {
 		templateUrl: 'partials/confirmation.html'
 	})
+	.when('/list', {
+		templateUrl: 'partials/list.html'
+	})
 	.when('/edit/:id', {
 		templateUrl: 'partials/edit.html',
 		controller: 'edit_campaign'
