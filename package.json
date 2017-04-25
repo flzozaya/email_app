@@ -4,6 +4,8 @@
   "description": "Full MEAN email Deployment App",
   "main": "server.js",
   "author": "Lorenzo Zozaya - zozaya.io",
+  "repository": "https://github.com/flzozaya/email_app.git",
+  "license": "copyrighted",
   "dependencies": {
     "angular": "^1.6.2",
     "angular-route": "^1.6.2",
