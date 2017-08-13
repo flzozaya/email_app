@@ -29,8 +29,12 @@
    
 <!-- Add jQuery, Bootstrap & Angular libraries -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>-->
+
+	<script src="../node_modules/angular/angular.min.js"></script>
+	<script src="../node_modules/angular-route/angular-route.min.js"></script>
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     
@@ -59,27 +63,6 @@
     <script src="app/controllers.js"></script>
     <script src="app/directives/preview_button.js"></script>
 
-
-
-
-<!-- Add fancyBox -->
-	<!-- <link rel="stylesheet" href="preview-box/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-	<script type="text/javascript" src="preview-box/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-    <script type="text/javascript">
-		$(document).ready(function() {
-			$(".various").fancybox({
-			maxWidth	: 800,
-			maxHeight	: 1000,
-			fitToView	: false,
-			width		: '70%',
-			height		: '95%',
-			autoSize	: false,
-			closeClick	: false,
-			openEffect	: 'none',
-			closeEffect	: 'none'
-			});
-		});
-	</script> -->
   	
 <!-- Add Jquery Form -->
     <script src="js/jquery.form.js"></script> 
@@ -99,9 +82,8 @@
 				<nav class="gn-menu-wrapper">
 					<div class="gn-scroller">
 						<ul class="gn-menu">
-							<li><a class="gn-icon" href="#/"><i class="fa fa-clock-o"></i>Deployment</a></li>
-							<li><a class="gn-icon" href="#/list"><i class="fa fa-list-ul"></i>Campaign List</a></li>
-                            <!-- <li><a class="gn-icon" href="#/wall"><i class="fa fa-exclamation-triangle"></i>Wall</a> -->
+							<li><a class="gn-icon" href="#!/"><i class="fa fa-clock-o"></i>Deployment</a></li>
+							<li><a class="gn-icon" href="#!/list"><i class="fa fa-list-ul"></i>Campaign List</a></li>
                             </li>
 						</ul>
 					</div><!-- /gn-scroller -->
